@@ -10,6 +10,11 @@ Software: QGIS 3.24.0-Tisler
 
 All input data were reprojected to the CRS EPSG:3035.
 
+## Spatial extent  
+
+Bounding box coordinates (Format: Lng / Lat, GDAL):  
+3500000.0000000000000000,2680000.0000000000000000 : 4490000.0000000000000000,3670000.0000000000000000
+
 ## Steps
 
 1. We start by dissolving the CLC2018 layer by Level 1 class. This will give us 5 classes, instead of the original 44 classes grouped in a three-level hierarchy. If a higher level of detail is desired, one can work with Level 2 or Level 3 classes. The result is a layer with five rows in the attribute table, each corresponding to a CLC Level 1 class. Use the `Vector > Geoprocessing Tools > Dissolve...` tool to dissolve the layer containing the CLC data. Select `Level 1` as the dissolving field.
