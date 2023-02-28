@@ -15,16 +15,16 @@ library(ggrepel)
 
 # Get urban population data between 2013-2022 from Eurostat ----
 ## Source: https://ec.europa.eu/eurostat/databrowser/view/URB_LPOP1__custom_5120358/default/table?lang=en
-pop_13_22 <- read_csv("data/raw/urb_lpop1__custom_5120358_page_linear.csv")
+pop_13_22_f <- read_csv("data/raw/urb_lpop1__custom_5120358_page_linear.csv")
 pop_13_22_c <- read_csv("data/raw/urb_cpop1_page_linear.csv")
 ua <- read_csv("data/raw/URAU_LB_2021_3035_CITIES_within_frame.csv")
 
 # Examine the data ----
-# View(pop_13_22)
-glimpse(pop_13_22)
+# View(pop_13_22_f)
+glimpse(pop_13_22_f)
 
 # Clean the data ----
-pop_13_22_long <- pop_13_22 |> 
+pop_13_22_long <- pop_13_22_f |> 
   # Remove unnecessary columns
   select(-c(DATAFLOW, `LAST UPDATE`, freq, indic_ur, OBS_FLAG)) |> 
   # Remove countries
