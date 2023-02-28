@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+    <title>roads-pollutants-in-grid-2</title>
+    <layers>
+        <layer>
+            <datasource>
+                <type>ESRI Shapefile</type>
+                <path>data/gis/roads-pollutants-in-grid-2.shp</path>
+            </datasource>
+            <layername>roads-pollutants-in-grid-2</layername>
+            <title/>
+            <variable_order>
+                <time_ids>
+                    <id>time 0</id>
+                </time_ids>
+                <var>CellCode</var>
+                <var>EofOrigin</var>
+                <var>NofOrigin</var>
+                <var>
+                    LENGTH
+                    <displayed_decimals>6</displayed_decimals>
+                </var>
+                <var>
+                    COUNT
+                    <displayed_decimals>6</displayed_decimals>
+                </var>
+                <var>ReleaseMed</var>
+                <var>PollutantC</var>
+                <var>PollutantG</var>
+                <var>Pollutan_1</var>
+                <var>
+                    TotalQuant
+                    <displayed_decimals>6</displayed_decimals>
+                </var>
+                <var>City</var>
+                <var>NACEMain_1</var>
+                <var>CL</var>
+            </variable_order>
+            <custom_classifications/>
+            <weights_entries/>
+            <default_vars>
+                <default_var>
+                    <name/>
+                    <time_id>time 0</time_id>
+                </default_var>
+                <default_var>
+                    <name/>
+                    <time_id>time 0</time_id>
+                </default_var>
+                <default_var>
+                    <name/>
+                    <time_id>time 0</time_id>
+                </default_var>
+                <default_var>
+                    <name/>
+                    <time_id>time 0</time_id>
+                </default_var>
+            </default_vars>
+        </layer>
+    </layers>
+</project>

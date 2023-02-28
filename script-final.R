@@ -3,6 +3,11 @@
 ## install.packages("packagename") in the console, replacing "packagename" with 
 ## "tidyverse", for instance, if you want to install the "tidyverse" package.
 ## Do that for all packages.
+
+# install.packages("tidyverse")
+# install.packages("scales")
+# install.packages("ggrepel")
+
 library(tidyverse)
 library(scales)
 library(ggrepel)
@@ -10,6 +15,7 @@ library(ggrepel)
 # Get urban population data between 2013-2022 from Eurostat ----
 ## Source: https://ec.europa.eu/eurostat/databrowser/view/URB_LPOP1__custom_5120358/default/table?lang=en
 pop_13_22 <- read_csv("data/raw/urb_lpop1__custom_5120358_page_linear.csv")
+pop_13_22_c <- read_csv("data/raw/urb_cpop1_page_linear.csv")
 
 # Examine the data ----
 # View(pop_13_22)
@@ -45,7 +51,7 @@ pop_13_22_long |>
   theme(legend.position = "none")
 
 # Generate table in wide format
-pop_13_22_wide <- pop_13_22 |>
+pop_13_22_c_wide <- pop_13_22_c |>
   pivot_wider(names_from = TIME_PERIOD, values_from = OBS_VALUE) |>
   select(-c(DATAFLOW, `LAST UPDATE`, freq, indic_ur, OBS_FLAG, `2022`)) |>
   filter(nchar(cities) > 2) |>
@@ -62,4 +68,5 @@ pop_13_22_wide <- pop_13_22 |>
   mutate(across(where(is.double), ~na_if(., 0)))
 
 # Write wide table with time-series data
-write_csv(pop_13_22_wide, "data/processed/pop_13_22_wide.csv", na = "")
+write_csv(pop_13_22_c_wide, "data/processed/pop_13_22_c_wide.csv", na = "")
+
