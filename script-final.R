@@ -1,7 +1,7 @@
 # Load package(s) ----
-## If you get an error trying to run the library() functions below, 
-## it means that the package is not installed. Execute 
-## install.packages("packagename") in the console, replacing "packagename" with 
+## If you get an error trying to run the library() functions below, it means 
+## that the package is not installed. Execute install.packages("packagename") 
+## in the console, replacing "packagename" with 
 ## "tidyverse", for instance, if you want to install the "tidyverse" package.
 ## Do that for all packages.
 
