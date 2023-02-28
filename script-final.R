@@ -54,7 +54,7 @@ pop_13_22_long |>
   theme(legend.position = "none")
 
 # Generate table in wide format
-pop_13_22_c_wide <- pop_13_22_c |>
+pop_13_22_c_wide <- pop_13_22_c |> bla
   pivot_wider(names_from = TIME_PERIOD, values_from = OBS_VALUE) |>
   select(-c(DATAFLOW, `LAST UPDATE`, freq, indic_ur, OBS_FLAG, `2022`)) |>
   filter(nchar(cities) > 2) |>
