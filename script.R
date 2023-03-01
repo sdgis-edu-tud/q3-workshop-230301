@@ -62,6 +62,7 @@ pop_13_22_c_wide <- pop_13_22_c |>
   group_by(cities) |>
   summarise_all(.funs = c(mean="sum")) |> 
   ungroup() |> 
+  rename_with(str_sub, start = 1L, end = 4L, .cols = ends_with("_sum")) |> 
   mutate(across(where(is.double), ~na_if(., 0)))
 
 # Write wide table with time-series data
