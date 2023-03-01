@@ -60,15 +60,8 @@ pop_13_22_c_wide <- pop_13_22_c |>
   select(-c(DATAFLOW, `LAST UPDATE`, freq, indic_ur, OBS_FLAG, `2022`)) |>
   filter(nchar(cities) > 2) |>
   group_by(cities) |>
-  summarise(`2013` = sum(`2013`, na.rm = TRUE),
-            `2014` = sum(`2014`, na.rm = TRUE),
-            `2015` = sum(`2015`, na.rm = TRUE),
-            `2016` = sum(`2016`, na.rm = TRUE),
-            `2017` = sum(`2017`, na.rm = TRUE),
-            `2018` = sum(`2018`, na.rm = TRUE),
-            `2019` = sum(`2019`, na.rm = TRUE),
-            `2029` = sum(`2020`, na.rm = TRUE),
-            `2021` = sum(`2021`, na.rm = TRUE)) |>
+  summarise_all(.funs = c(mean="sum")) |> 
+  ungroup() |> 
   mutate(across(where(is.double), ~na_if(., 0)))
 
 # Write wide table with time-series data
