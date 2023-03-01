@@ -60,7 +60,7 @@ pop_13_22_c_wide <- pop_13_22_c |>
   select(-c(DATAFLOW, `LAST UPDATE`, freq, indic_ur, OBS_FLAG, `2022`)) |>
   filter(nchar(cities) > 2) |>
   group_by(cities) |>
-  summarise_all(.funs = c(mean="sum")) |> 
+  summarise_all(.funs = c(sum="sum")) |> 
   ungroup() |> 
   rename_with(str_sub, start = 1L, end = 4L, .cols = ends_with("_sum")) |> 
   mutate(across(where(is.double), ~na_if(., 0)))
